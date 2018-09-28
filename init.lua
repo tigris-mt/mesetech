@@ -27,3 +27,5 @@ minetest.register_craft{
 if minetest.get_modpath("morebombs") then
     tigris.include("bomb.lua")
 end
+
+tigris.include("anchor.lua")
