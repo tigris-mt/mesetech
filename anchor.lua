@@ -4,7 +4,7 @@ local function r(name, d)
     tigris.register_projectile(name .. "_p", {
         texture = d.image,
         load_map = true,
-        on_any_hit = function(self, pos)
+        on_node_hit = function(self, pos)
             if self._owner and self._owner_object and self._last_passable then
                 if minetest.get_player_by_name(self._owner) then
                     self._owner_object:setpos(self._last_passable)
