@@ -4,3 +4,5 @@ tigris_base?
 morebombs?
 pipeworks?
 unified_inventory?
+playereffects?
+player_monoids?

@@ -8,11 +8,14 @@
 * [Pipeworks](https://github.com/minetest-mods/pipeworks) for Tubes
 * [Tigris Base](https://github.com/tigris-mt/tigris_base) for Projectiles
 * [MoreBombs](https://github.com/tigris-mt/morebombs) for Explosions
+* [Player Effects](https://forum.minetest.net/viewtopic.php?f=11&t=9689) for Status Effects
+* [Player Monoids](https://github.com/minetest-mods/player_monoids) also for Status Effects
 
 ## Settings
 * `mesetech_enable_bombs = <bool>`
 * `mesetech_enable_anchors = <bool>`
 * `mesetech_enable_repulsion_pad = <bool>`
+* `mesetech_enable_effects = <bool>`
 
 ## Activator Setup
 * To the back of the activator must be lava.

@@ -73,3 +73,7 @@ end
 if minetest.settings:get_bool("mesetech_enable_repulsion_pad", true) then
     include("repulsion_pad.lua")
 end
+
+if minetest.settings:get_bool("mesetech_enable_effects", true) and minetest.get_modpath("playereffects") and minetest.get_modpath("player_monoids") then
+    include("effects.lua")
+end
