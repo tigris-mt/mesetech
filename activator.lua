@@ -2,9 +2,18 @@ local pipes = minetest.get_modpath("pipeworks")
 
 minetest.register_node("mesetech:magnet", {
     description = "Container Magnet",
-    tiles = {"mesetech_magnet.png"},
+    tiles = {"default_steel_block.png^technic_fine_copper_wire.png"},
     groups = {cracky = 1},
 })
+
+minetest.register_craft{
+    output = "mesetech:magnet",
+    recipe = {
+        {"default:steel_ingot", "technic:copper_coil", "default:steel_ingot"},
+        {"default:steel_ingot", "technic:green_energy_crystal", "default:steel_ingot"},
+        {"default:steel_ingot", "technic:copper_coil", "default:steel_ingot"},
+    },
+}
 
 minetest.register_node("mesetech:receiver", {
     description = "Active Mese Receiver",
@@ -40,15 +49,35 @@ minetest.register_node("mesetech:receiver", {
     after_dig_node = pipes and pipeworks.after_dig,
 })
 
+minetest.register_craft{
+    output = "mesetech:receiver",
+    recipe = {
+        {"technic:composite_plate", "default:obsidian", "technic:composite_plate"},
+        {"default:mese", "", "homedecor:plastic_sheeting"},
+        {"technic:composite_plate", "default:obsidian", "technic:composite_plate"},
+    },
+}
+
 minetest.register_node("mesetech:particles", {
     description = "Particles (you hacker you!)",
-    tiles = {"mesetech_particles.png"},
+    tiles = {{
+        name = "mesetech_particles.png",
+        animation = {
+            type = "vertical_frames",
+            aspect_w = 16,
+            aspect_h = 16,
+            length = 0.5,
+        },
+    }},
+    selection_box = {type = "fixed", fixed = {0,0,0,0,0,0}},
+    walkable = false,
     groups = {not_in_creative_inventory = 1},
     drawtype = "glasslike",
     paramtype = "light",
     sunlight_propagates = true,
     drop = "",
     diggable = false,
+    buildable_to = true,
     can_dig = function()
         return false
     end,
@@ -73,11 +102,11 @@ local function r(d)
     local desc = class.uc .. " Mese Activator L" .. d.level
 
     local tiles = {
-        "mesetech_activator_top.png" .. (pipes and "^pipeworks_tube_connection_metallic.png"),
-        "mesetech_activator_bottom.png",
-        "mesetech_activator_side.png",
-        "mesetech_activator_side.png",
-        "mesetech_activator_side.png",
+        "mesetech_activator.png" .. (pipes and "^pipeworks_tube_connection_metallic.png"),
+        "mesetech_activator.png",
+        "mesetech_activator.png",
+        "mesetech_activator.png",
+        "mesetech_activator.png",
         "mesetech_activator_front.png",
     }
     for i,t in ipairs(tiles) do
@@ -265,6 +294,11 @@ local function r(d)
 
         technic.register_machine(class.uc, cname, technic.receiver)
     end
+
+    minetest.register_craft{
+       output = names.inactive,
+       recipe = d.recipe,
+    }
 end
 
 r{
@@ -272,18 +306,33 @@ r{
     level = 1,
     demand = 200 * 1000,
     speed = 1,
+    recipe = {
+        {"default:mese_crystal", "default:obsidian", "default:mese_crystal"},
+        {"technic:lv_grinder", "technic:lv_extractor", "technic:electric_furnace"},
+        {"technic:lv_transformer", "technic:control_logic_unit", "technic:lv_transformer"},
+    },
 }
 
 r{
     class = "mv",
     level = 2,
-    demand = 500 * 1000,
+    demand = 400 * 1000,
     speed = 2,
+    recipe = {
+        {"technic:concrete", "mesetech:active_mese_1", "technic:concrete"},
+        {"mesetech:active_mese_1", "mesetech:activator_lv", "mesetech:active_mese_1"},
+        {"technic:concrete", "mesetech:active_mese_1", "technic:concrete"},
+    },
 }
 
 r{
     class = "hv",
     level = 3,
-    demand = 1200 * 1000,
+    demand = 800 * 1000,
     speed = 3,
+    recipe = {
+        {"technic:blast_resistant_concrete", "mesetech:active_mese_2", "technic:blast_resistant_concrete"},
+        {"mesetech:active_mese_2", "mesetech:activator_mv", "mesetech:active_mese_2"},
+        {"technic:blast_resistant_concrete", "mesetech:active_mese_2", "technic:blast_resistant_concrete"},
+    },
 }
