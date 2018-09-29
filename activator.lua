@@ -249,6 +249,9 @@ local function r(d)
                     meta:set_int("time", 0)
                     demand(0)
                     technic.swap_node(pos, names.inactive)
+                    if minetest.get_node(orientation.front).game == "mesetech:particles" then
+                        minetest.remove_node(orientation.front)
+                    end
                     return
                 end
 
@@ -272,7 +275,7 @@ local function r(d)
                     minetest.set_node(orientation.front, {name = "mesetech:particles"})
                     technic.swap_node(pos, names.active)
                     meta:set_string("infotext", desc .. " Active")
-                    local isp = (minetest.get_item_group(subject, "active_mese") or 0) + 3
+                    local isp = ((minetest.get_item_group(subject, "active_mese") or 0) + 3) * 5
                     if meta:get_int("time") < isp * 100 then
                         if not powered then
                             technic.swap_node(pos, names.inactive)

@@ -39,10 +39,10 @@ minetest.register_craft{
 
 include("activator.lua")
 
-if minetest.get_modpath("morebombs") then
+if minetest.settings:get_bool("mesetech_enable_bombs", true) and minetest.get_modpath("morebombs") then
     include("bomb.lua")
 end
 
-if minetest.get_modpath("tigris_base") then
+if minetest.settings:get_bool("mesetech_enable_anchors", true) and minetest.get_modpath("tigris_base") then
     include("anchor.lua")
 end
