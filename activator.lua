@@ -321,9 +321,9 @@ r{
     demand = 400 * 1000,
     speed = 2,
     recipe = {
-        {"technic:concrete", "mesetech:active_mese_1", "technic:concrete"},
+        {"technic:concrete", "technic:mv_cable", "technic:concrete"},
         {"mesetech:active_mese_1", "mesetech:activator_lv", "mesetech:active_mese_1"},
-        {"technic:concrete", "mesetech:active_mese_1", "technic:concrete"},
+        {"technic:concrete", "technic:mv_transformer", "technic:concrete"},
     },
 }
 
@@ -333,8 +333,8 @@ r{
     demand = 800 * 1000,
     speed = 3,
     recipe = {
-        {"technic:blast_resistant_concrete", "mesetech:active_mese_2", "technic:blast_resistant_concrete"},
+        {"technic:blast_resistant_concrete", "technic:hv_cable", "technic:blast_resistant_concrete"},
         {"mesetech:active_mese_2", "mesetech:activator_mv", "mesetech:active_mese_2"},
-        {"technic:blast_resistant_concrete", "mesetech:active_mese_2", "technic:blast_resistant_concrete"},
+        {"technic:blast_resistant_concrete", "technic:hv_transformer", "technic:blast_resistant_concrete"},
     },
 }
