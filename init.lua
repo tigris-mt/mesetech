@@ -1,7 +1,20 @@
-mesetech = {}
+mesetech = {
+    max_level = 3,
+    mese = "default:mese_crystal",
+    next = {},
+}
+
+mesetech.next[mesetech.mese] = "mesetech:active_mese_1"
+
+local function include(p)
+    dofile(minetest.get_modpath(minetest.get_current_modname()) .. "/" .. p)
+end
 
 -- Register Active Mese
-for level=1,3 do
+for level=1,mesetech.max_level do
+    if level ~= mesetech.max_level then
+        mesetech.next["mesetech:active_mese_" .. level] = "mesetech:active_mese_" .. (level + 1)
+    end
     minetest.register_craftitem("mesetech:active_mese_" .. level, {
         description = "Level " .. level .. " Active Mese",
         inventory_image = "mesetech_tube.png^mesetech_" .. level .. ".png",
@@ -24,8 +37,12 @@ minetest.register_craft{
     },
 }
 
+include("activator.lua")
+
 if minetest.get_modpath("morebombs") then
-    tigris.include("bomb.lua")
+    include("bomb.lua")
 end
 
-tigris.include("anchor.lua")
+if minetest.get_modpath("tigris_base") then
+    include("anchor.lua")
+end
