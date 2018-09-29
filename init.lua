@@ -22,6 +22,29 @@ for level=1,mesetech.max_level do
     })
 end
 
+if minetest.get_modpath("unified_inventory") then
+    unified_inventory.register_craft_type("p_activating", {
+        description = "Activating",
+        width = 2,
+        height = 1,
+    })
+
+    unified_inventory.register_craft_type("activating", {
+        description = "Activating",
+        width = 1,
+        height = 1,
+    })
+
+    for from,to in pairs(mesetech.next) do
+        unified_inventory.register_craft{
+            type = (from == mesetech.mese) and "p_activating" or "activating",
+            items = (from == mesetech.mese) and {from, "mesetech:tube"} or {from},
+            output = to,
+            width = 0,
+        }
+    end
+end
+
 minetest.register_craftitem("mesetech:tube", {
     description = "Empty Suppression Tube",
     inventory_image = "mesetech_tube.png",

@@ -3,3 +3,4 @@ technic
 tigris_base?
 morebombs?
 pipeworks?
+unified_inventory?
