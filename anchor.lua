@@ -1,6 +1,11 @@
 local cooldown = {}
 
 local function r(name, d)
+    local function fail(self)
+        -- Maybe alert the user in a better way?
+        minetest.chat_send_player(self._owner, "You feel a slight tug, but nothing happens.")
+    end
+
     tigris.register_projectile(name .. "_p", {
         texture = d.image,
         load_map = true,
@@ -11,11 +16,12 @@ local function r(name, d)
                     self._owner_object:set_hp(self._owner_object:get_hp() - d.hp)
                 end
             else
-                -- Maybe alert the user in a better way?
-                minetest.chat_send_player(self._owner, "You feel a slight tug, but nothing happens.")
+                fail(self)
             end
             return true
         end,
+
+        on_timeout = fail,
     })
 
     minetest.register_craftitem(name, {
