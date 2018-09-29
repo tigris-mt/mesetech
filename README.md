@@ -12,6 +12,7 @@
 ## Settings
 * `mesetech_enable_bombs = <bool>`
 * `mesetech_enable_anchors = <bool>`
+* `mesetech_enable_repulsion_pad = <bool>`
 
 ## Activator Setup
 * To the back of the activator must be lava.

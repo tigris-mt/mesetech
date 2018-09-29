@@ -69,3 +69,7 @@ end
 if minetest.settings:get_bool("mesetech_enable_anchors", true) and minetest.get_modpath("tigris_base") then
     include("anchor.lua")
 end
+
+if minetest.settings:get_bool("mesetech_enable_repulsion_pad", true) then
+    include("repulsion_pad.lua")
+end
