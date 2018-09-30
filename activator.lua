@@ -306,7 +306,7 @@ end
 r{
     class = "lv",
     level = 1,
-    demand = 200 * 1000,
+    demand = 7 * 1000,
     speed = 1,
     recipe = {
         {"default:mese_crystal", "default:obsidian", "default:mese_crystal"},
@@ -318,7 +318,7 @@ r{
 r{
     class = "mv",
     level = 2,
-    demand = 400 * 1000,
+    demand = 150 * 1000,
     speed = 2,
     recipe = {
         {"technic:concrete", "technic:mv_cable", "technic:concrete"},
@@ -330,7 +330,7 @@ r{
 r{
     class = "hv",
     level = 3,
-    demand = 800 * 1000,
+    demand = 700 * 1000,
     speed = 3,
     recipe = {
         {"technic:blast_resistant_concrete", "technic:hv_cable", "technic:blast_resistant_concrete"},
