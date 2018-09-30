@@ -10,7 +10,7 @@ minetest.register_craft{
     output = "mesetech:magnet",
     recipe = {
         {"default:steel_ingot", "technic:copper_coil", "default:steel_ingot"},
-        {"default:steel_ingot", "technic:green_energy_crystal", "default:steel_ingot"},
+        {"default:steel_ingot", "technic:red_energy_crystal", "default:steel_ingot"},
         {"default:steel_ingot", "technic:copper_coil", "default:steel_ingot"},
     },
 }
