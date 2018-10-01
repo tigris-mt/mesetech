@@ -20,6 +20,11 @@ for level=1,mesetech.max_level do
         inventory_image = "mesetech_tube.png^mesetech_" .. level .. ".png",
         groups = {active_mese = level},
     })
+    minetest.register_craft{
+        type = "fuel",
+        recipe = "mesetech:active_mese_" .. level,
+        burntime = 10 * 60 + 10 * 60 * level,
+    }
 end
 
 if minetest.get_modpath("unified_inventory") then
