@@ -334,7 +334,7 @@ r{
     speed = 3,
     recipe = {
         {"technic:blast_resistant_concrete", "technic:hv_cable", "technic:blast_resistant_concrete"},
-        {"mesetech:fine_gold_wire", "mesetech:activator_mv", "technic:fine_gold_wire"},
+        {"technic:fine_gold_wire", "mesetech:activator_mv", "technic:fine_gold_wire"},
         {"technic:blast_resistant_concrete", "technic:hv_transformer", "technic:blast_resistant_concrete"},
     },
 }
