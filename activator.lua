@@ -310,7 +310,7 @@ r{
     speed = 1,
     recipe = {
         {"default:mese_crystal", "default:obsidian", "default:mese_crystal"},
-        {"technic:lv_grinder", "technic:lv_extractor", "technic:electric_furnace"},
+        {"technic:fine_copper_wire", "technic:electric_furnace", "technic:fine_copper_wire"},
         {"technic:lv_transformer", "technic:control_logic_unit", "technic:lv_transformer"},
     },
 }
@@ -322,7 +322,7 @@ r{
     speed = 2,
     recipe = {
         {"technic:concrete", "technic:mv_cable", "technic:concrete"},
-        {"mesetech:active_mese_1", "mesetech:activator_lv", "mesetech:active_mese_1"},
+        {"technic:fine_silver_wire", "mesetech:activator_lv", "technic:fine_silver_wire"},
         {"technic:concrete", "technic:mv_transformer", "technic:concrete"},
     },
 }
@@ -334,7 +334,7 @@ r{
     speed = 3,
     recipe = {
         {"technic:blast_resistant_concrete", "technic:hv_cable", "technic:blast_resistant_concrete"},
-        {"mesetech:active_mese_2", "mesetech:activator_mv", "mesetech:active_mese_2"},
+        {"mesetech:fine_gold_wire", "mesetech:activator_mv", "technic:fine_gold_wire"},
         {"technic:blast_resistant_concrete", "technic:hv_transformer", "technic:blast_resistant_concrete"},
     },
 }
