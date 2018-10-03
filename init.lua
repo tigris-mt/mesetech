@@ -59,9 +59,9 @@ minetest.register_craftitem("mesetech:tube", {
 minetest.register_craft{
     output = "mesetech:tube",
     recipe = {
-        {"default:obsidian_glass", "", "default:obsidian_glass"},
-        {"default:obsidian_glass", "", "default:obsidian_glass"},
-        {"default:obsidian_glass", "technic:composite_plate", "default:obsidian_glass"},
+        {"default:glass", "default:obsidian_glass", "default:glass"},
+        {"default:glass", "", "default:glass"},
+        {"default:glass", "technic:composite_plate", "default:glass"},
     },
 }
 
